@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte Corporativa • Kiala Game Studio</title>
+    <style>
+        :root {
+            --cyan: #00d2ff;
+            --orange: #ff6b00;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(255, 255, 255, 0.25);
+            --yt-red: #ff0000;
+            --fb-blue: #1877f2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antiali;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000 0%, #262626 100%);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .site-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAdQmxlbmRlcjpSZW5kZXJUaW1lOjAwOjEwLjUz/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8AAEQgC0AUAAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+f6WkooAKKKKAClpKKACiiigAooooAKKKKACilooASiiigAooooAKKKKAFopKKAClpKKACiiigAooooAWkoooAKKWigBKKWkoAKKWkoAKKKKACiiigAooooAKKKWgBKKWkoAKKKWgBKKWkoAKKKKACiiigAooooAWkopaAEoopaAEpaKSgApaSigAooooAKKKKACiiigAooooAKWkpaAEooooAKKKWgBKKKKACiiigAooooAWkpaSgAooooAKKKKAFpKKKAFpKKWgBKKWkoAKKKKACiiigAopaKAEoopaAEooooAKKKWgBKKKWgAopKKAFpKKKACilpKACiiigBaSiigAooooAKKKKACilpKACiiigAopaSgAooooAKKKKACiiigAopaKAEpaSloASiiigBaSiloASiiigAooooAKKKKACiiigAooooAKWikoAKKKKACiiigAooooAKWkooAKKKKACiiigApaKSgAooooAKKKKAClpKWgBKKKKACilooASiiigAooooAKKKKAFpKWkoAKWkpaAEooooAKKKKACiiigApaSigAooooAKWkooAKKKKAFpKKWgBKWkooAKKKWgBKKKWgBKWkooAKWikoAKKKWgBKKKKACiiigAooooAWkoooAWkoooAKKKKAClpKKACiiigAooooAKKKKACiiigAooooAKKKWgBKKKKACilpKACiiigBaSiloASilooASiiigAoopaAEooooAKKKKAFpKKKACiiigAooooAKKKKACiiigBaSiloASlpKKACiiigApaSloASilpKACiiloASilpKACiiigAoopaAEooooAKKKKAClpKWgBKKKKACiiigAooooAKKKKACiiigApaSigAooooAKKKKACiiigAoopaAEooooAKKKKACiiigBaSiigAooooAKKKKACiiigAopaSgAooooAKWkooAWkoooAKKKWgApKKWgBKKKKACiiigAoopaAEooooAKKKKACilpKACiiigAopaSgBaSiigAooooAKKWkoAWkoooAKKKWgBKKKKACiiigApaSigApaSigAooooAKKKKACilpKAFopKKACiiigAoopaAEooooAKKWkoAKKKWgBKKKKACiiigApaSigAooooAWkoooAKKKWgBKKKKACiiigAooooAKKKKACiiigAooooAKKKKAClpKKACilpKACiiigAooooAKKWkoAKKKWgBKKKKAClpKKACiiigBaKSigAooooAKKKKACiiigAooooAKKKKAClpKKACiiigAopaSgApaSigBaSiigBaSiigBaSiigAopaSgApaSigAooooAKKKKAFpKKKAClpKWgBKKKKACiiigBaSiigBaSiigAooooAKKKWgBKKKKACiiigAooooAWkoooAKKKKACilpKACilpKAFpKKWgBKKWkoAKWkooAKKKWgBKKKKACiiigAooooAKKKKAFpKKKACiiigAooooAWkoooAKWkooAKKKKAClopKAFpKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKWgBKKKKAFpKKKACilpKACiiigAopaKAEooooAKWikoAWikooAKKWkoAKKKKAFpKKKACiiigAooooAKKKKACiiigApaSigAooooAKWkooAKKKWgBKKKKACiiigApaSigAoopaAEpaSigAooooAKWkooAKKKKACiiigAooooAKKKKACiiigBaSiigApaSigAopaSgApaSigAooooAKKKKAFpKKKACiiloASilpKACilooASilpKAClpKKAClpKKACiiigAooooAKKKKAClopKACilpKACilpKACilooASiiigAooooAKKKKACiiloASilpKACiiigAoopaAEpaSigAopaSgBaSiigAooooAKKKKACiiigAooooAKWkooAKKKKACiiigAooooAKKKKACiiigAopaSgAooooAKKKKACiiigAooooAWikooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAopaSgAooooAKKKKAFpKWkoAWkoooAWkoooAKWikoAKWkooAWkoooAKKKKACiiigAooooAWkoooAWkoooAWkoooAKKWkoAKKKKACiiigApaSigAoopaACkoooAKKWkoAKKKKACilpKAClpKKAClpKKACilpKACiiigAooooAWkoooAWkpaSgAopaSgAooooAKKKKACiiigApaSloASiiigAooooAKKKKACiiigAooooAKKWkoAKKKKACiiloASiiigAooooAKKKKAClpKKACiiigAooooAKKKKACiiigAooooAKKKKAClpKWgBKKKKACiiigAooooAKWkooAKWkooAKKKWgBKKWkoAKKKKACiiigAooooAKWikoAKKKKACiiigAooooAWkoooAKKKKACiiigApaSigAooooAKKKKACilpKACiiigAooooAKKKWgBKKKKACiiloASiiigApaKSgAooooAKKKWgBKKKKACilpKACiiigAooooAKKKKACiiloASiiigApaSigBaSiigApaSigAooooAKKWkoAKKKKACiiigAooooAKKKKAFpKWkoAKKKKAFpKKKACiiigAopaSgApaSigApaSigAooooAKKKKACiiigApaSigAooooAKKKKACiiigApaSigAooooAKKWkoAKKKWgBKKKKAClpKKAFpKKWgBKKKKACiiigBaKSigApaSigBaSlpKAFpKKKACiiigBaKSigAoopaACkoooAWkoooAKKKWgBKKKKACiiigAoopaAEooooAWkpaMUAFFLil2mi4DaKdtpMUAJRRRQAUlFFABRRRQAtJRRQAUUUUAFFFFABRS0UAJS0UlABRRRQAUUUUAFFLSUAFFFFABRRRQAUUUUAFFFFABRRS0AFJRRQAUUUUAFFFFABRS0lABRRRQAUUUUAFFFFABRRRQAUUUUALSUUtACUUtFACUUtJQAUUUtABSUUUAFFFFAC0lFFABRRRQAUUUUAFFFFAC0lFFABRRS0AJS0lFABRS0lABRRRQAUtFJQAUUUUAFLSUtACUUUUAFFFFABRRRQAUUUtACUtJRQAUUUUALSUUtACUUUtACUUUUAFFFFABRS0lABRRRQAtJRRQAtJRS0AJRRRQAUUUUAFFFFABRRRQAUUUUALSUUUALSUtJQAUUUUAFFFFABRRRQAUUUUAFLRSUALSUUUAFFFFABRS0UAJRRRQAUUtJQAUUUUAFFFLQAUUlFABRRRQAUUUUALSUUUAFFFFABRRRQAUUUtACUUtJQAUUtFACUUUUAFFFFABRS0lABRRRQAUUtJQAUUUUAFFFFAC0lFFABRRRQAtJRRQAUUUUAFFFFABRRRQAUUtJQAtJRRQAUUtFACUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUtJQAtJRRQAUUUUAFFFFABRRRQAUUUtABSUUUAFFFFABRRS0AFJRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRS0AFFJRQAUUUUAFFLSUAFFLSUAFFLSUALRSUUAFFFFABRRRQAUtJRQAUUUUAFFFLQAlLSUUAFFFFABRRRQAUUtJQAUtJRQAUUtJQAUUUtACUUUUAFFLSUAFFLRQAlLRSUAFFLSUAFFFFABRRRQAUUtJQAUUUUAFLRRQAlFFFAC0UlFABRRRQAtJRRQAUUUUAFLSUUAFFFFABRS0UAJS0lFABRS0lAC0lLRQAlFFFABRRRQAUtJRQAUUUUAFFFFABRRRQAUUUtACUUUUAFFFLQAlLSUUAFFFFABRRS0AJRRRQAUUUUALSUUtACUtJRQAUtFJQAUUUUAFFFFABRRRQAUUUUAFFLSUAFFFFAC0lLSUAFFFFABRRRQAUtJRQAUUUUAFFFFABRRRQAUUtJQAUUUtACUUUtACUUUtACUUUUAFFFFABRRRQAUUUtACUtJRQAUUUUALSUtFACUUUUAFFFLQAlFFLQAlLSUUAFFFFABRS0lAC0lFFABRRRQAUtJRQAUtFJQAtJRRQAUUUUAFFFFABRRRQAUtJS0AJRRS0AJRRRQAUUUUAFFFFAC0lFFABRRRQAUUUUAFFFFABRRS0AFJRRQAUUUtACUtJRQAUUUUAFFFLQAlFLSUAFFFLQAlFLSUAFFFLQAlFFFAC0lFFABRRRQAUUUUAFFFLQAlFFFABRRRQAUUUUALRSUUAFFFFABRRS0AJRRRQAUUUUAFFFFABRRRQAUUUUALSUUtACUtJRQAUUUUAFFFFABRS0UAJRRRQAUtJRQAUUtJQAUUUUAFFFFABRRS0AJRRRQAUUUUAFFFFAC0lFFABRRRQAUUtFACUUUUAFFFFABRRRQAUUUUAFLSUUAFFFFABRRS0AFJRRQAUUtJQAUUUUAFFFLQAlFFFABRRRQAUUUUAFFFLQAlFFFABRRS0AJRRRQAUUUUAFFFLQAlLSUUAFFFFAC0UlLQAlFFFABRRRQAUUUUAFFFFAC0lFFABRRRQAtJRRQAUUUUAFFLSUAFFFFABRRRQAUUUUAFFFLQAUlFLQAlFFFABRRRQAUUUtACUUUUALSUUUAFFLSUAFFFFABRS0lABRRRQAUtJRQAUUtJQAtJRRQAUUUtACUUUUAFFFFABS0lFABRRRQAUUUUAFFFFABRS0lABS0lFABRRRQAUUUtABSUUUAFFLSUALSUUtACUUUUAFFFFABRRRQAUUUUALRSUUAFLSUtACUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUtJRQAUUUUALRRSUALRSUUAFFFFABRS0lABRRS0AFJRRQAUUUUAFFFFAC0lFFABRRRQAUUUUALSUUUAFFFFABRRRQAUUUUAFFFFABRS0lABS0lFAC0lFFAC0lFFABRRRQAtJS0lABRRRQAUUUUAFFFFAC0lFFABRRS0AJRRRQAUUUUALSUUUALSUUUAFFFFABRRS0AJRRRQAUUUUAFFFFAC0lFFABRRRQAUUtJQAUUtJQAtJRS0AJRS0lABS0lFABRRS0AJRRRQAUUUUAFFFFABRRRQAtJRRQAUUUUAFFFFAC0lFFABS0lFABRRRQAUtFJQAtJRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRS0AJRRRQAtJRRQAUUtJQAUUUUAFFLRQAlFFFABS0UlAC0UlFABRS0lABRRRQAtJRRQAUUUUAFFFFABRRRQAUUUUAFLSUUAFFFFABS0lFABRRS0AJRRRQAUUUUAFLSUUAFFFLQAlLSUUAFFFFABS0lFABRRRQAUUUUAFFFFABRRRQAUUUUALSUUUAFLSUUAFFLSUAFLSUUAFFFFABRRRQAtJRRQAUUUtACUUtJQAUUtFACUUtJQAUtJRQAUtJRQAUUUUAFFFFABRRRQAUtFJQAUUtJQAUUUUAFFLRQAlFFFABRRRQAUUUUAFFFLQAlFLSUAFFFFABRRS0AJS0lFABRS0lAC0lFFABRRRQAUUUUAFFFFABRRRQAUtJRQAUUUUAFFFFABRRRQAUUUUAFFFFABRS0lABRRRQAUUUUAFFFFABRRRQAtFJRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRS0lABRRRQAUUUUALSUtJQAtJRRQAtJRRQAUtFJQAUtJRQAtJRRQAUUUUAFFFFABRRRQAtJRRQAtJRRQAtJRRQAUUtJQAUUUUAFFFFABS0lFABRRS0AFJRRQAUUtJQAUUUUAFFLSUAFLSUUAFLSUUAFFLSUAFFFLQAlFFFAC0lFFAC0lLSUAFFLSUAFFFFABRRRQAUUUUAFLSUtACUUUUAFFFLQAlFFFAH//Z') center center / cover no-repeat;
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .site-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ─── NAVEGAÇÃO LIMPA ─── */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .brand-icon {
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(135deg, var(--orange), var(--cyan));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            color: #111;
+        }
+
+        .brand-text-accent {
+            background: linear-gradient(135deg, #ffffff 30%, var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ─── CONSTRUCTION SHOWCASE ─── */
+        .construction-showcase {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 160px 24px 100px;
+        }
+
+        .construction-card {
+            background: rgba(15, 21, 35, 0.85);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid var(--cyan);
+            border-radius: 28px;
+            padding: 64px 80px;
+            text-align: center;
+            max-width: 650px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(0, 210, 255, 0.25);
+            animation: floatCard 6s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .construction-card h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--orange), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .construction-card p {
+            color: #cbd5e1;
+            font-size: 1.35rem;
+            line-height: 1.6;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--cyan);
+            color: #ffffff;
+            padding: 16px 36px;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 1.15rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 25px var(--cyan-glow);
+            transition: all 0.3s ease;
+        }
+
+        .btn-back-home:hover {
+            background: #00bfff;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 210, 255, 0.6);
+        }
+
+        /* ─── SIGA-NOS NO RODAPÉ ─── */
+        .follow-us-strip { padding: 60px 24px; max-width: 1360px; margin: 0 auto; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.08); width: 100%; }
+        .follow-us-strip h4 { font-size: 1.6rem; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
+        .social-icons-bottom { display: flex; justify-content: center; align-items: center; gap: 32px; }
+
+        .btn-bottom-icon-only { width: 76px; height: 76px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; transition: all 0.3s ease; text-decoration: none; border: 2px solid var(--border-hover); background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); cursor: pointer; }
+        .fb-icon-only { color: #5097ff; border-color: rgba(24, 119, 242, 0.4); } .fb-icon-only:hover { background-color: var(--fb-blue); color: #ffffff; box-shadow: 0 12px 40px rgba(24, 119, 242, 0.6); transform: scale(1.12); }
+        .yt-icon-only { color: #ff4a4a; border-color: rgba(255, 0, 0, 0.4); } .yt-icon-only:hover { background-color: var(--yt-red); color: #ffffff; box-shadow: 0 12px 40px rgba(255, 0, 0, 0.6); transform: scale(1.12); }
+        .itch-icon-only { color: #ff2449; border-color: rgba(255, 36, 73, 0.4); } .itch-icon-only:hover { background-color: #ff2449; color: #ffffff; box-shadow: 0 12px 40px rgba(255, 36, 73, 0.6); transform: scale(1.12); }
+
+        /* ─── FOOTER ─── */
+        footer { background: #000000; padding: 40px 24px 60px; text-align: center; width: 100%; }
+        .footer-bottom { max-width: 1360px; margin: 0 auto; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 36px; color: rgba(255, 255, 255, 0.4); font-size: 1rem; }
+
+        @media (max-width: 768px) {
+            .construction-card { padding: 48px 36px; }
+            .construction-card h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── FUNDO FIXO ─── -->
+    <div class="site-background"></div>
+    <div class="site-overlay"></div>
+
+    <!-- ─── WRAPPER CENTRAL ─── -->
+    <div class="content-wrapper">
+
+        <!-- ─── HEADER LIMPO SEM MENU ─── -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="brand" title="Voltar à Página Principal">
+                    <div class="brand-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                            <polyline points="2 17 12 22 22 17"/>
+                            <polyline points="2 12 12 17 22 12"/>
+                        </svg>
+                    </div>
+                    <span>Kiala Game <span class="brand-text-accent">Studio</span></span>
+                </a>
+            </div>
+        </header>
+
+        <!-- ─── CENTRO DA PÁGINA (PÁGINA EM CONSTRUÇÃO) ─── -->
+        <div class="construction-showcase">
+            <div class="construction-card">
+                <h1>Página em Construção</h1>
+                <p>Os nossos artistas estão a afinar os shaders, modelos 3D e texturas para apresentar uma galeria visual incrível muito em breve.</p>
+                <a href="index.html" class="btn-back-home">Voltar ao Início</a>
+            </div>
+        </div>
+
+        <!-- ─── SIGA-NOS NO RODAPÉ ─── -->
+        <section class="follow-us-strip">
+            <h4>Siga-nos:</h4>
+            <div class="social-icons-bottom">
+                <a href="https://www.facebook.com/KialaGameStudio" target="_blank" rel="noopener" class="btn-bottom-icon-only fb-icon-only" title="Seguir no Facebook (/KialaGameStudio)">
+                    <svg width="34" height="34" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+
+                <a href="https://www.youtube.com/@KialaGameStudio3.8" target="_blank" rel="noopener" class="btn-bottom-icon-only yt-icon-only" title="Inscrever-se no YouTube (@KialaGameStudio3.8)">
+                    <svg width="34" height="34" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+
+                <a href="https://kiala-game-studio.itch.io" target="_blank" rel="noopener" class="btn-bottom-icon-only itch-icon-only" title="Visitar Página Indie no itch.io (kiala-game-studio.itch.io)">
+                    <svg width="34" height="34" fill="currentColor" viewBox="0 0 245.371 220.736"><path d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C203.084-5.02 42.69-5.02 31.99 1.365zm165.732 77.01c-.13 0-.256.002-.385.002-13.35 0-24.81-11.082-24.823-24.414 0 13.332-10.742 24.414-24.092 24.414-13.352 0-24.97-11.082-24.972-24.414 0 13.332-11.62 24.414-24.97 24.414-13.35 0-24.093-11.082-24.093-24.414 0 13.332-11.475 24.414-24.825 24.414-.13 0-.255-.002-.385-.002-8.31 9.544-6.398 25.688-6.398 32.553v32.613c0 11.334 11.335 22.668 22.668 22.668h125.328c11.332 0 22.668-11.334 22.668-22.668V110.93c0-6.865 1.91-23.01-6.396-32.555zm-119.861 31.576c7.094 0 12.844 5.75 12.844 12.844 0 7.092-5.75 12.842-12.844 12.842-7.092 0-12.842-5.75-12.842-12.842 0-7.094 5.75-12.844 12.842-12.844zm89.176 0c7.092 0 12.842 5.75 12.842 12.844 0 7.092-5.75 12.842-12.842 12.842-7.094 0-12.844-5.75-12.844-12.842 0-7.094 5.75-12.844 12.844-12.844zm-56.121 21.033c4.113 0 7.447 3.334 7.447 7.447 0 4.111-3.334 7.445-7.447 7.445-4.111 0-7.445-3.334-7.445-7.445 0-4.113 3.334-7.447 7.445-7.445z"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- ─── FOOTER ─── -->
+        <footer>
+            <div class="footer-bottom">
+                <span>© 2026 Kiala Game Studio. Feito com paixão por jogos.</span>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
