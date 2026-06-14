@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+    <!-- 🛡️ ESCUDO ANTI-CLICKJACKING (OWASP STANDARD INTELIGENTE) -->
+    <script>
+        document.documentElement.style.display = 'none';
+        if (window.self === window.top || window.location.hostname.includes('arena') || window.location.hostname === '' || window.location.hostname.includes('127.0.0.1') || window.location.hostname.includes('localhost') || window.location.hostname.includes('github.io')) {
+            document.documentElement.style.display = 'block';
+        } else {
+            try { window.top.location = window.self.location; } 
+            catch (e) { document.documentElement.innerHTML = 'Acesso Negado por Segurança (OWASP Clickjacking Protection).'; }
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Design: Do Zero à Experiência Imersiva • Kiala Game Studio</title>
@@ -607,7 +617,7 @@
                     <div id="nav-dropdown-menu" class="nav-dropdown-menu">
                         <div class="nd-links">
                             <a href="game-design.html" title="Abrir Documentação de Game Design">Game design</a>
-                            <a href="arte.html" title="Página de Arte Corporativa">Arte</a>
+                            <a href="index.html#arte-modal" title="Abrir Montra de Arte na Home">Arte</a>
                             <a href="https://kiala-game-studio.itch.io" target="_blank" rel="noopener" title="Jogar os Nossos Jogos Indie">Jogo</a>
                         </div>
                         
@@ -934,7 +944,22 @@
                 });
             }
 
-            // 3. Lógica do E-mail Modal (se existir na página)
+                                    // 3. Lógica do E-mail Modal Anti-Spam (Obfuscated Harvester Hardening)
+            const epUser = ["kialagamestudio"].join("");
+            const epDom = ["gmail", "com"].join(".");
+            const secureEmailTarget = [epUser, epDom].join("@");
+
+            const epDisplay = document.querySelector('.protected-email-display');
+            if (epDisplay) { epDisplay.innerText = secureEmailTarget; }
+
+            const btnHardenedCom = document.getElementById('btn-hardened-email-com');
+            if (btnHardenedCom) {
+                btnHardenedCom.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.href = ["mailto:", secureEmailTarget].join("");
+                });
+            }
+
             const btnOpenEmail = document.getElementById('btn-open-email-modal');
             const btnCloseEmail = document.getElementById('btn-close-email-modal');
             const emailModal = document.getElementById('email-modal-window');
@@ -971,7 +996,7 @@
                             return;
                         }
 
-                        const mailtoUrl = `mailto:kialagamestudio@gmail.com?subject=${encodeURIComponent(subVal)}&body=${encodeURIComponent(msgVal)}`;
+                        const mailtoUrl = ["mailto:", secureEmailTarget, "?subject=", encodeURIComponent(subVal), "&body=", encodeURIComponent(msgVal)].join("");
                         window.location.href = mailtoUrl;
                         
                         inputSub.value = '';
